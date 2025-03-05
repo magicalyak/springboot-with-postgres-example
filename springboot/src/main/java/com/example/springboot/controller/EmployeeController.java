@@ -4,7 +4,6 @@ import com.example.springboot.entity.Employee;
 import com.example.springboot.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee/v1")
 @RequiredArgsConstructor
-@Validated
+@CrossOrigin(origins = "*", allowedHeaders = "*")  // Allow all origins (for testing)
+// @Validated
 public class EmployeeController {
 
     private final EmployeeService employeeService;
