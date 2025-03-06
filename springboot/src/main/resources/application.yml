@@ -3,16 +3,16 @@ spring:
     name: springboot
   jackson:
     property-naming-strategy: SNAKE_CASE
-  flyway:
-    locations: classpath:/db/migration
-    schemas: employees
-    baselineOnMigrate: true
-    enabled: true
+  # flyway:
+  #   locations: classpath:/db/migration
+  #   schemas: employees
+  #   baselineOnMigrate: true
+  #   enabled: true
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${DB_HOST:employee-db1.c5sfgp1gztw2.us-east-1.rds.amazonaws.com:5432/employee}?currentSchema=employees
-    username: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:postgres}
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}${DB_ARGS}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: none
